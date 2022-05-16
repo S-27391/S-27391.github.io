@@ -9,13 +9,17 @@
     <H1>三笠公園</h1>
     <h2>Hello Worldとは</h2>
     <H3>こんにちは世界</H3>
+    <p onclick="functionName()">東郷平八郎</p>
+    <input id="karabako1" type="text" name="" value=""><br>
+    <input id="karabako2"type="text" name="" value=""><br>
+    <button onclick="keisan()" type="button" name="button">計算</button><br>
     <a href="https://www.kanagawaparks.com/mikasa/">
     <img src= "./mikasa.jpg"></a>
     <br>
     <style media="screen">
       img{
-        height:50vh;
-        width:50vw;
+        height:vh;
+        width:vw;
       }
       table,td,th{                   /*table,td,th要素に適用*/
         border-width: 1px;           /*枠線の幅　1ピクセル*/
@@ -29,6 +33,18 @@
       }
       h1{color:red;}
     </style>
+    <script type="text/javascript">
+    function functionName() {
+      alert("1848年1月27日〈弘化4年12月22日〉 - 1934年〈昭和9年〉5月30日）");
+    }
+    function keisan(){
+      var a = document.getElementById('karabako1')
+      var b = document.getElementById('karabako2')
+      var result = parseInt(a.value) + parseInt(b.value);
+      alert("結果" + result);
+    }
+
+    </script>
     <A1>↑↑↑↑↑↑↑↑↑↑↑↑↑</A1><br>
     <a1><em><strong>この画像からHPへ飛べます‼</sutorong></em><a1/>
   </body>
