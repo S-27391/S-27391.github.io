@@ -12,16 +12,49 @@
   </head>
   <body>
     <script type="text/javascript">
-      result=0;
-      function cookieClick(){
-        result=result+1;
+    var ls_count = localStorage.getItem("ls_result");
+     if (ls_count){
+       result = parseInt(ls_count);
+     }else{
+       result = 0;
+     }
+setInterval(seve_action,1000)
+      function save_action() {
+       localStorage.setItem("ls_result",result);
+       console.log("save_action")
+     }
+      function cookieClick(num){
+        result=result+num;
         var element=document.getElementById('result')
         element.textContent=result;
       }
+     function karsol(){
+
+     }
+
+     function grandma() {
+       if (result>10) {
+         result=result+1;
+         setInterval(cookieClick,1000,8);
+       }
+
+     }
+     function farm(){
+
+     }
+     function main() {
+
+     }
 
     </script>
   クッキー<p id="result"></p>枚<br>
-    <img onclick="cookieClick()" src="cookie.jpg")>
+    <img onclick="cookieClick(1)" src="cookie.jpg")>
+    <ul>
+      <li onclick="karsol();">カーソル</li>
+      <li onclick="grandma();">グランマ</li>
+      <li onclick="farm();">ファーム</li>
+      <li onclick="main();">マイン</li>
+    </ul>
   </body>
 
 
