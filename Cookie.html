@@ -8,25 +8,36 @@
         height:50%;
         width:50%;
     }
+    .container{display: flex;}
+    .item1{ flex-grow:2;}
+    .item2{flex-grow:5;}
+    img{transition: transform .4s ease;}
+    img:hover{transform:scale(1.2);}
+    li{border:1px solid #333;}
+    li{transition: transform .2s ease;} /*お遊び*/
+    li:hover{transform:scale(1.1);}     /*お遊び*/
     </style>
   </head>
   <body>
     <script type="text/javascript">
-    var ls_count = localStorage.getItem("ls_result");
+    var ls_count = localStorage.getItem("ls_result")
      if (ls_count){
        result = parseInt(ls_count);
      }else{
        result = 0;
      }
-setInterval(seve_action,1000)
+     setInterval(save_action,1000)
       function save_action() {
-       localStorage.setItem("ls_result",result);
-       console.log("save_action")
+       localStorage.setItem("ls_result",result)
      }
+     setInterval(screen_update,1000)
+     function screen_update() {
+       var element=document.getElementById('result')
+       element.textContent=result;
+     }
+
       function cookieClick(num){
         result=result+num;
-        var element=document.getElementById('result')
-        element.textContent=result;
       }
      function karsol(){
 
@@ -47,17 +58,19 @@ setInterval(seve_action,1000)
      }
 
     </script>
+    <div class="container">
+    <div class="item1">
   クッキー<p id="result"></p>枚<br>
     <img onclick="cookieClick(1)" src="cookie.jpg")>
+  </div>
+  <div class="item2">
     <ul>
-      <li onclick="karsol();">カーソル</li>
+      <li onclick="karsol();">カーソル
       <li onclick="grandma();">グランマ</li>
       <li onclick="farm();">ファーム</li>
       <li onclick="main();">マイン</li>
     </ul>
+  </diV>
+</div>
   </body>
-
-
-
-
 </html>
