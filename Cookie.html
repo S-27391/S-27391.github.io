@@ -20,6 +20,7 @@
   </head>
   <body>
     <script type="text/javascript">
+    let event_ids=[]
     var ls_count = localStorage.getItem("ls_result")
      if (ls_count){
        result = parseInt(ls_count);
@@ -46,9 +47,16 @@
      function grandma() {
        if (result>10) {
          result=result+1;
-         setInterval(cookieClick,1000,8);
+         let int_id=setInterval(cookieClick,1000,8);
+         event_ids.push(int_id);
        }
 
+     }
+     function sell_grandma() {
+       if(event_ids.length>0){
+         let int_id = event_ids.pop();
+         clearInterval(int_id);
+       }
      }
      function farm(){
 
@@ -64,11 +72,20 @@
     <img onclick="cookieClick(1)" src="cookie.jpg")>
   </div>
   <div class="item2">
+
+    <ul>購入</ul>
     <ul>
       <li onclick="karsol();">カーソル
       <li onclick="grandma();">グランマ</li>
       <li onclick="farm();">ファーム</li>
       <li onclick="main();">マイン</li>
+    </ul>
+    <ul>売却</ul>
+    <ul>
+      <li onclick="sell_karsol();">カーソル
+      <li onclick="sell_grandma();">グランマ</li>
+      <li onclick="sell_farm();">ファーム</li>
+      <li onclick="sell_main();">マイン</li>
     </ul>
   </diV>
 </div>
