@@ -1,0 +1,27 @@
+
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function b_switch(){
+        let buy =document.getElementById('buy');
+        let sell =document.getElementById('sell');
+        if(buy.style.display=="none"){
+          buy.style.display="block";
+          sell.style.display="none";
+        }else{
+          buy.style.display="none";
+          sell.style.display="block";
+        }
+        }
+
+    </script>
+    <button onclick="b_switch();"type="button" name="button">購入/売却</button>
+    <p id="buy">購入のリストタグ</p>
+    <p id="sell" style="display: none">売却のリストタグ</p>
+  </body>
+</html>
